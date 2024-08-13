@@ -36,7 +36,7 @@ public static class Startup
         MapsterSettings.Configure();
         return services
             .AddApiVersioning()
-            .AddAuth(config)
+           // .AddAuth(config)
             .AddBackgroundJobs(config)
             .AddCaching(config)
             .AddCorsPolicy(config)
@@ -46,7 +46,7 @@ public static class Startup
             .AddPOLocalization(config)
             .AddMailing(config)
             .AddMediatR(Assembly.GetExecutingAssembly())
-            .AddMultitenancy()
+            //.AddMultitenancy()
             .AddNotifications(config)
             .AddOpenApiDocumentation(config)
             .AddPersistence()
@@ -84,10 +84,10 @@ public static class Startup
             .UseExceptionMiddleware()
             .UseRouting()
             .UseCorsPolicy()
-            .UseAuthentication()
+            //.UseAuthentication()
             .UseCurrentUser()
-            .UseMultiTenancy()
-            .UseAuthorization()
+            //.UseMultiTenancy()
+            //.UseAuthorization()
             .UseRequestLogging(config)
             .UseHangfireDashboard(config)
             .UseOpenApiDocumentation(config);
